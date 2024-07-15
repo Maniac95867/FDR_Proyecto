@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find abb_irb4400_support)/launch/load_irb4400l_30_243.launch"/>
+  <!--param name="robot_description" textfile="$(find proy_pkg)/urdf/irb4400.urdf" /-->
+
+  <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+    <param name="use_gui" value="true"/>
+  </node-->
+
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find dependencia)/config/view_robot.rviz" required="true" />
+
+</launch>
